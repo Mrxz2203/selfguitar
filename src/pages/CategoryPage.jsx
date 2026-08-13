@@ -1,10 +1,11 @@
 import { useParams, Link } from "react-router-dom";
 import { useCategory } from "../hooks/useCategory";
-import SongCard from "../components/category/SongCard";
+import GroupCard from "../components/category/GroupCard";
+import BackButton from "../components/common/BackButton";
 
 export default function CategoryPage() {
   const { categoryId } = useParams();
-  const { category, songs } = useCategory(categoryId);
+  const { category, groups } = useCategory(categoryId);
 
   if (!category) {
     return (
@@ -19,20 +20,17 @@ export default function CategoryPage() {
 
   return (
     <section className="max-w-5xl mx-auto px-4 py-16">
-      <Link to="/" className="text-sm text-neutral-400 hover:text-emerald-400">
-        ← Volver
-      </Link>
-      <h1 className="text-3xl font-bold text-white mt-4 mb-8">
-       {category.name}
-      </h1>
-<p className="text-neutral-400 mt-2 mb-8">{category.description}</p>
+      <BackButton to="/" label="Inicio" />
 
-      {songs.length === 0 ? (
-        <p className="text-neutral-400">Aún no hay canciones en esta categoría.</p>
+      <h1 className="text-3xl font-bold text-white mt-6">{category.name}</h1>
+      <p className="text-neutral-400 mt-2 mb-8">{category.description}</p>
+
+      {groups.length === 0 ? (
+        <p className="text-neutral-400">Aún no hay contenido en esta categoría.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {songs.map((song) => (
-            <SongCard key={song.id} song={song} />
+          {groups.map((group) => (
+            <GroupCard key={group.id} group={group} categoryId={categoryId} />
           ))}
         </div>
       )}

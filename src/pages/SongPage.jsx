@@ -1,10 +1,11 @@
 import { useParams, Link } from "react-router-dom";
 import { useSong } from "../hooks/useSong";
 import SongDetail from "../components/song/SongDetail";
+import BackButton from "../components/common/BackButton";
 
 export default function SongPage() {
   const { songId } = useParams();
-  const song = useSong(songId);
+  const { song, group, category } = useSong(songId);
 
   if (!song) {
     return (
@@ -17,5 +18,13 @@ export default function SongPage() {
     );
   }
 
-  return <SongDetail song={song} />;
+  const backTo =
+    category && group ? `/categoria/${category.id}/${group.id}` : "/";
+
+  return (
+    <div className="max-w-2xl mx-auto px-4 pt-8">
+      <BackButton to={backTo} label={group ? group.name : "Volver"} />
+      <SongDetail song={song} />
+    </div>
+  );
 }

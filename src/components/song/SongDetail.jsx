@@ -1,40 +1,27 @@
-function getYoutubeEmbedUrl(url) {
-  const match = url.match(/(?:v=|youtu\.be\/)([\w-]{11})/);
-  return match ? `https://www.youtube.com/embed/${match[1]}` : null;
-}
-
 export default function SongDetail({ song }) {
-  const embedUrl = getYoutubeEmbedUrl(song.youtubeUrl);
-
   return (
     <article className="max-w-2xl mx-auto px-4 py-16">
-      <h1 className="text-3xl font-bold text-white">
-        {song.title}
-      </h1>
+      <h1 className="text-3xl font-bold text-white">{song.title}</h1>
+      {song.artist && <p className="text-neutral-400 mt-1">{song.artist}</p>}
 
-      <p className="text-neutral-400 mt-1">
-        {song.artist}
-      </p>
-
-      {embedUrl && (
-        <div className="mt-8 aspect-video rounded-xl overflow-hidden border border-neutral-800">
-          <iframe
-            className="w-full h-full"
-            src={embedUrl}
-            title={song.title}
-            allowFullScreen
-          />
-        </div>
-      )}
-
-      <a
-        href={song.notesUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-8 inline-block rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-neutral-950 hover:bg-emerald-400 transition"
-      >
-        Ver notas de guitarra →
-      </a>
+      <div className="mt-8 flex flex-col sm:flex-row gap-4">
+        <a
+          href={song.youtubeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-neutral-950 hover:bg-emerald-400 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+        >
+          Ver video en YouTube →
+        </a>
+        <a
+          href={song.notesUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-emerald-400 px-6 py-3 font-semibold text-emerald-400 hover:bg-emerald-400 hover:text-neutral-950 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+        >
+          Ver notas de guitarra →
+        </a>
+      </div>
     </article>
   );
 }
