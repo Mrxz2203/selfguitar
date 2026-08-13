@@ -2,10 +2,7 @@ import HeroCarousel from "./HeroCarousel";
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="max-w-6xl mx-auto px-4 py-12 md:py-20 grid md:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-80px)]"
-    >
+    <section id="hero" className="scroll-mt-24 max-w-6xl mx-auto px-4 pt-16 pb-24 grid md:grid-cols-[1fr_1.2fr] gap-12 items-center">
       {/* Carrusel / Imagen */}
       <div className="flex justify-center items-center w-full">
         <HeroCarousel />
