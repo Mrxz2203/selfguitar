@@ -72,10 +72,11 @@ export const songs = [
   {
     id: "Kiseki",
     groupId: "GRe4N-BOYZ",
-    title: "Kiseki ",
+    title: "Kiseki",
     artist: "GRe4N BOYZ",
     youtubeUrl:"https://kiseki-green-gab.vercel.app/",
-    notesUrl: " https://www.songsterr.com/a/wsa/greeeen-kiseki-tab-s194286",
-chordsUrl: " https://es.ultimate-guitar.com/tab/greeeen/kiseki-chords-978245",
+    youtubeLabel: "Ver traducción →",
+    notesUrl: "https://www.songsterr.com/a/wsa/greeeen-kiseki-tab-s194286",
+chordsUrl: "https://es.ultimate-guitar.com/tab/greeeen/kiseki-chords-978245",
   }
 ];

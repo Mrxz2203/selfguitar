@@ -11,7 +11,7 @@ export default function SongDetail({ song }) {
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-neutral-950 hover:bg-emerald-400 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
         >
-          Ver video en YouTube →
+        {song.youtubeLabel || "Ver video en YouTube →"}
         </a>
         <a
           href={song.notesUrl}
