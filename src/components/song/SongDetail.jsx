@@ -19,8 +19,16 @@ export default function SongDetail({ song }) {
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-emerald-400 px-6 py-3 font-semibold text-emerald-400 hover:bg-emerald-400 hover:text-neutral-950 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
         >
-          Ver notas de guitarra →
+          Ver punteos de guitarra →
         </a>
+        <a
+href={song.chordsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-indigo-400 px-6 py-3 font-semibold text-indigo-400 hover:bg-indigo-400 hover:text-neutral-950 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+          >
+            Ver acordes →
+          </a>
       </div>
     </article>
   );
