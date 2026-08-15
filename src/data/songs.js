@@ -4,7 +4,7 @@ import srk from "../assets/Srk.png";
 import chalte from "../assets/Chalte.png";
 import tuhje from "../assets/tuhje.jpg";
 import tucarcel from "../assets/Tucarcel.png"
-import kiseki from "../assets/Kiseki.png"
+import Boyz from "../assets/boyz.png"
 export const categories = [
   { id: "anime", name: "Musica de Japon", image: esfera, description: "Aqui incluire punteos, notas de canciones de japon, de animes y de su cultura en general." },
   { id: "bollywood", name: "Bollywood", image: srk, description: "Aqui incluire musicas de Sharukhan y una que otra pelicula de la india para practicar sus notas o punteos" },
@@ -34,8 +34,9 @@ export const groups = [
     id: "GRe4N-BOYZ",
     categoryId: "anime",
     name: "GRe4N BOYZ",
-    image: kiseki,
+    image: Boyz,
   },
+
 ];
 
 export const songs = [
@@ -78,5 +79,13 @@ export const songs = [
     youtubeLabel: "Ver traducción →",
     notesUrl: "https://www.songsterr.com/a/wsa/greeeen-kiseki-tab-s194286",
 chordsUrl: "https://es.ultimate-guitar.com/tab/greeeen/kiseki-chords-978245",
-  }
+  },
+  {
+  id:"Igual-que-ayer",
+    groupId: "enanitos-verdes",
+    title: "Igual que ayer",
+    youtubeUrl:"https://www.youtube.com/watch?v=fmZ54ziDlf0&list=RDfmZ54ziDlf0&start_radio=1",
+    notesUrl: "https://acordes.lacuerda.net/enanitos/igual_que_ayer",
+chordsUrl: "https://www.cifraclub.com/enanitos-verdes/igual-que-ayer/",
+  },
 ];
